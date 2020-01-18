@@ -11,6 +11,9 @@ namespace AspNetCore.Swagger.Versioning.Swagger
 {
     public static class DependencyInjection
     {
+        /// <summary>
+        /// Add swagger to application
+        /// </summary>
         public static IServiceCollection AddSwagger(this IServiceCollection services, params Assembly[] assembliesWithModels)
         {
             var xmlFilePaths = assembliesWithModels
@@ -19,6 +22,7 @@ namespace AspNetCore.Swagger.Versioning.Swagger
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Test", Version = "v1" });
+                x.SwaggerDoc("v2", new OpenApiInfo { Title = "Api Test2", Version = "v2" });
                 x.DescribeAllParametersInCamelCase();
 
                 foreach (var xmlFilePath in xmlFilePaths)
@@ -30,6 +34,9 @@ namespace AspNetCore.Swagger.Versioning.Swagger
             return services;
         }
 
+        /// <summary>
+        /// Use swagger in application
+        /// </summary>
         public static IApplicationBuilder UseSwagger(this IApplicationBuilder app, IConfiguration configuration)
         {
             var swaggerOptinsSection = configuration.GetSection("SwaggerOptions");
@@ -49,6 +56,7 @@ namespace AspNetCore.Swagger.Versioning.Swagger
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
+                options.SwaggerEndpoint("v2/swagger.json", "v2");
             });
 
             return app;
