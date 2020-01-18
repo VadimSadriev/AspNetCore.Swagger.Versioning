@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AspNetCore.Swagger.Versioning.Contracts.Account
+namespace AspNetCore.Swagger.Versioning.Contracts.v2.Account
 {
     /// <summary>
     /// Response contract for <see cref="Account"/>

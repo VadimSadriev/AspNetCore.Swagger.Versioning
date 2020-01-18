@@ -1,4 +1,4 @@
-﻿namespace AspNetCore.Swagger.Versioning.Contracts.Exceptions
+﻿namespace AspNetCore.Swagger.Versioning.Contracts.v2.Exceptions
 {
     /// <summary> Contains information about thrown exception </summary>
     public class ExceptionErrorContract

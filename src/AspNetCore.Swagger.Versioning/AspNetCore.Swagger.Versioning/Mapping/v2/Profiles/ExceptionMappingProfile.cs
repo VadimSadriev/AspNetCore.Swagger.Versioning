@@ -1,9 +1,9 @@
-﻿using AspNetCore.Swagger.Versioning.Contracts.Exceptions;
+﻿using AspNetCore.Swagger.Versioning.Contracts.v2.Exceptions;
 using AutoMapper;
 using System;
 using System.Collections.Generic;
 
-namespace AspNetCore.Swagger.Versioning.Mapping.Profiles
+namespace AspNetCore.Swagger.Versioning.Mapping.v2.Profiles
 {
     /// <summary>
     /// Mapping for all kind of exceptions <see cref="Exception"/>

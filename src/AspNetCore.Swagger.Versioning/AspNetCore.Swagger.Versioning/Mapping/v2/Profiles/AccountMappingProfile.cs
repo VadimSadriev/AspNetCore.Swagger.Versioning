@@ -1,9 +1,9 @@
-﻿using AspNetCore.Swagger.Versioning.Contracts.Account;
+﻿using AspNetCore.Swagger.Versioning.Contracts.v2.Account;
 using AspNetCore.Swagger.Versioning.Models;
 using AutoMapper;
 using System;
 
-namespace AspNetCore.Swagger.Versioning.Mapping.Profiles
+namespace AspNetCore.Swagger.Versioning.Mapping.v2.Profiles
 {
     public class AccountMappingProfile : Profile
     {

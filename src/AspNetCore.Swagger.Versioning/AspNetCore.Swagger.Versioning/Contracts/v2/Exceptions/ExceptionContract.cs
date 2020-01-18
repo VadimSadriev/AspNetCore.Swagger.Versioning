@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace AspNetCore.Swagger.Versioning.Contracts.Exceptions
+namespace AspNetCore.Swagger.Versioning.Contracts.v2.Exceptions
 {
     /// <summary>
     /// Contract for all kind of <see cref="System.Exception"/> thrown in application

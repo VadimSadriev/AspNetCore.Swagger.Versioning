@@ -1,4 +1,4 @@
-﻿using AspNetCore.Swagger.Versioning.Contracts.Exceptions;
+﻿using AspNetCore.Swagger.Versioning.Contracts.v1.Exceptions;
 using AspNetCore.Swagger.Versioning.Exceptions;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;

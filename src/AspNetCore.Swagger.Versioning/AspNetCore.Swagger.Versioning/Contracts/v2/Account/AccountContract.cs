@@ -1,7 +1,6 @@
-﻿using AspNetCore.Swagger.Versioning.Contracts.Enums;
-using System;
+﻿using AspNetCore.Swagger.Versioning.Contracts.v2.Enums;
 
-namespace AspNetCore.Swagger.Versioning.Contracts.Account
+namespace AspNetCore.Swagger.Versioning.Contracts.v2.Account
 {
     /// <summary> Contract used for account creation </summary>
     public class AccountContract
@@ -11,6 +10,9 @@ namespace AspNetCore.Swagger.Versioning.Contracts.Account
 
         /// <summary> Age of user </summary>
         public int Age { get; set; }
+
+        /// <summary> User hobby </summary>
+        public string Hobby { get; set; }
 
         /// <summary> Account permission </summary>
         public AccountPermission[] Permissions { get; set; }

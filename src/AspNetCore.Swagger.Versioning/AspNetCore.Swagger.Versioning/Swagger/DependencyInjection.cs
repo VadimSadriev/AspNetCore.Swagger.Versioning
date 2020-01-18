@@ -22,6 +22,8 @@ namespace AspNetCore.Swagger.Versioning.Swagger
             services.AddSwaggerGen(x =>
             {
                 x.SwaggerDoc("v1", new OpenApiInfo { Title = "Api Test", Version = "v1" });
+                x.SwaggerDoc("v2", new OpenApiInfo { Title = "Api Test v2", Version = "v2" });
+                x.CustomSchemaIds(x => x.FullName);
                 x.DescribeAllParametersInCamelCase();
 
                 foreach (var xmlFilePath in xmlFilePaths)
@@ -54,7 +56,10 @@ namespace AspNetCore.Swagger.Versioning.Swagger
 
             app.UseSwaggerUI(options =>
             {
-                options.SwaggerEndpoint(swaggerOptions.UiEndpoint, swaggerOptions.Description);
+                foreach (var version in swaggerOptions.Versions)
+                {
+                    options.SwaggerEndpoint(version.UiEndpoint, version.Description);
+                }
             });
 
             return app;

@@ -1,4 +1,4 @@
-﻿namespace AspNetCore.Swagger.Versioning.Contracts.Enums
+﻿namespace AspNetCore.Swagger.Versioning.Contracts.v1.Enums
 {
     /// <summary>
     /// Represents Account permission

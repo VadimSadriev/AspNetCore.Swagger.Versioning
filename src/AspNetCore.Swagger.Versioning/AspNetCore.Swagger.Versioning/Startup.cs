@@ -25,7 +25,7 @@ namespace AspNetCore.Swagger.Versioning
             services.AddSwagger(Assembly.GetExecutingAssembly());
             services.AddAutoMapper();
 
-            services.AddControllers()
+            services.AddControllers(x => x.Conventions.Add(new ApiExplorerGroupPerVersionConvention()))
                 .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
         }
 

@@ -1,17 +1,18 @@
-﻿using AspNetCore.Swagger.Versioning.Contracts.Account;
-using AspNetCore.Swagger.Versioning.Contracts.Exceptions;
+﻿using AspNetCore.Swagger.Versioning.Contracts.v1.Account;
+using AspNetCore.Swagger.Versioning.Contracts.v1.Exceptions;
 using AspNetCore.Swagger.Versioning.Exceptions;
 using AspNetCore.Swagger.Versioning.Models;
+using AspNetCore.Swagger.Versioning.Routes.v1;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AspNetCore.Swagger.Versioning.Controllers
+namespace AspNetCore.Swagger.Versioning.Controllers.v1
 {
-    /// <summary> Work with accounts </summary>
-    [Route("api/[controller]")]
+    /// <summary> Work with accounts v1 </summary>
+    [Route(AppRoutes.Account.AccountRoot)]
     public class AccountController : Controller
     {
         private static readonly List<Account> _accounts = new List<Account>();
@@ -48,7 +49,7 @@ namespace AspNetCore.Swagger.Versioning.Controllers
         /// <summary>
         /// Returns Account by identifier
         /// </summary>
-        [HttpGet("{accountId}")]
+        [HttpGet(AppRoutes.Account.GetAccountById)]
         [ProducesResponseType(typeof(AccountResponseContract), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ExceptionContract), StatusCodes.Status500InternalServerError)]
         public IActionResult GetAccountById([FromRoute]long accountId)
