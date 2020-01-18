@@ -3,6 +3,7 @@ using System.Linq;
 
 namespace AspNetCore.Swagger.Versioning.Swagger
 {
+    // https://dev.to/htissink/versioning-asp-net-core-apis-with-swashbuckle-making-space-potatoes-v-x-x-x-3po7
     public class ApiExplorerGroupPerVersionConvention : IControllerModelConvention
     {
         public void Apply(ControllerModel controller)
